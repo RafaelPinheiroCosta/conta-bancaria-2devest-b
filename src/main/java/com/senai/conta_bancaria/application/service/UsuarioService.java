@@ -5,6 +5,8 @@ import com.senai.conta_bancaria.domain.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class UsuarioService {
@@ -13,7 +15,10 @@ public class UsuarioService {
     UsuarioRepository usuarioRepository;
 
     public Usuario cadastrarUsuario(Usuario usuario) {
-        usuarioRepository.save(usuario);
-        return usuario;
+            return usuarioRepository.save(usuario);
+    }
+
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepository.findAll();
     }
 }
